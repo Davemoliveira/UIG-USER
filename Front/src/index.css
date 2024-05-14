@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+body{
+  background: bg-gradient-to-r from-slate-300 to-slate-500;
+}
+
+
+/* Rule to enable dark mode - Still testing*/ 
+body.dark .slide-in{
+  background: bg-gradient-to-r from-slate-300 to-slate-500;
+  background:blue;
+}
+
+
+
+li{
+  color:white;
+}
+
+
+a{
+ color: black; 
+}
+li, ul{
+  color:black
+}
+
+span{
+  color:black
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Slide animation for main content */
+.slide-in {
+  animation: slideFromRight 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Toggle button */
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button.on {
+  background-color: black;
+  color: white;
+}
+
+.toggle-button.off {
+  background-color: bg-gray-50;
+  color: white;
+}
+
+
+
+
+
+/* Settings Columns  */
