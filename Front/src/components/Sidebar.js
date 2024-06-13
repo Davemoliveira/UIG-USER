@@ -72,18 +72,19 @@ const Sidebar = ({ location }) => {
                 isExpanded ? "" : "opacity-100"
               }`}
             />
-            {isExpanded && <span className="ml-2">Overview</span>}
+            {isExpanded && <span className="ml-2">OVERVIEW</span>}
           </Link>
         </li>
 
-        <li
+
+   <li
           className={`transition-all duration-500 ease-in-out delay-300 ${
             isExpanded ? "opacity-100" : "opacity-0"
           }`}
         >
           <Link
-            to="/charts"
-            className={pathname === "/charts" ? "font-bold text-black" : ""}
+            to="/Applications"
+            className={pathname === "/Applications" ? "font-bold text-black" : ""}
           >
             <MdOutlineBarChart
               className={`inline-block w-10 h-10 mt-2 mb-2 text-black fill-black transition-all duration-500 ease-in-out ${
@@ -92,11 +93,44 @@ const Sidebar = ({ location }) => {
             />
             {isExpanded && (
               <span className="ml-2 transition-all duration-500 ease-in-out">
-                Charts
+                APPLICATIONS
               </span>
             )}
           </Link>
         </li>
+
+
+
+
+     <li
+          className={`transition-all duration-500 ease-in-out delay-700 ${
+            isExpanded ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Link
+            to="/connections"
+            className={pathname === "/connections" ? "font-bold text-black" : ""}
+          >
+            <VscGlobe
+              className={`inline-block w-10 h-10 mt-2 mb-2 text-black fill-black transition-all duration-500 ease-in-out ${
+                isExpanded ? "" : "opacity-100"
+              }`}
+            />
+            {isExpanded && (
+              <span className="ml-2 transition-all duration-500 ease-in-out">
+                CONNECTIONS
+              </span>
+            )}
+          </Link>
+        </li>
+
+
+
+
+
+
+
+
 
         <li
           className={`transition-all duration-500 ease-in-out delay-400 ${
@@ -104,8 +138,8 @@ const Sidebar = ({ location }) => {
           }`}
         >
           <Link
-            to="/cli"
-            className={pathname === "/cli" ? "font-bold text-black" : ""}
+            to="/Deployments"
+            className={pathname === "/Deployments" ? "font-bold text-black" : ""}
           >
             <PiTerminalFill
               className={`inline-block w-10 h-10 mt-2 mb-2 text-black fill-black transition-all duration-500 ease-in-out ${
@@ -114,7 +148,7 @@ const Sidebar = ({ location }) => {
             />
             {isExpanded && (
               <span className="ml-2 transition-all duration-500 ease-in-out">
-                CLI (Command Line)
+                DEPLOYMENTS
               </span>
             )}
           </Link>
@@ -137,34 +171,14 @@ const Sidebar = ({ location }) => {
               />
               {isExpanded && (
                 <span className="ml-2 transition-all duration-500 ease-in-out">
-                  Users
+                  USERS
                 </span>
               )}
             </Link>
           </li>
         )}
 
-        <li
-          className={`transition-all duration-500 ease-in-out delay-700 ${
-            isExpanded ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Link
-            to="/Companies"
-            className={pathname === "/Companies" ? "font-bold text-black" : ""}
-          >
-            <VscGlobe
-              className={`inline-block w-10 h-10 mt-2 mb-2 text-black fill-black transition-all duration-500 ease-in-out ${
-                isExpanded ? "" : "opacity-100"
-              }`}
-            />
-            {isExpanded && (
-              <span className="ml-2 transition-all duration-500 ease-in-out">
-                Companies
-              </span>
-            )}
-          </Link>
-        </li>
+
 
         <li
           className={`transition-all duration-500 ease-in-out delay-200 ${
@@ -184,7 +198,7 @@ const Sidebar = ({ location }) => {
             />
             {isExpanded && (
               <span className="ml-2 transition-all duration-500 ease-in-out">
-                Settings
+                SETTINGS
               </span>
             )}
           </Link>
@@ -211,7 +225,7 @@ const Sidebar = ({ location }) => {
                 isExpanded ? "" : "opacity-100"
               }`}
             />
-            {isExpanded && <span className="ml-2">Log out</span>}
+            {isExpanded && <span className="ml-2">LOG OUT</span>}
           </Link>
         </li>
 

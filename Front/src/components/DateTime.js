@@ -7,7 +7,7 @@ function DateTime() {
     const time = moment().format("HH:mm");
   
     return (
-      <div className='text-center'>
+      <div className='text-center text-white'>
         <p> { date } <br/> { time } </p>
       </div>
     )

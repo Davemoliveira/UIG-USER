@@ -13,10 +13,10 @@ import LoginModal from "./LoginModal"
 
 // Pages
 import Overview from "./pages/overview"
-import Charts from "./pages/charts"
-import Cli from "./pages/cli"
+import Applications from "./pages/Applications"
+import Connections from "./pages/Connections"
+import Deployments from "./pages/Deployments"
 import Users from "./pages/users"
-import Companies from "./pages/companies"
 import Admin_settings from "./pages/admin_settings"
 
 import HomePage from "./HomePage"
@@ -73,13 +73,13 @@ const App = () => {
               {" "}
               <Overview />{" "}
             </Route>
-            <Route path="/Charts">
+            <Route path="/Applications">
               {" "}
-              <Charts />{" "}
+              <Applications />{" "}
             </Route>
-            <Route path="/Cli">
+            <Route path="/Deployments">
               {" "}
-              <Cli />{" "}
+              <Deployments />{" "}
             </Route>
             {isAdmin ? (
               <Route path="/Users">
@@ -88,9 +88,9 @@ const App = () => {
             ) : (
               <></>
             )}
-            <Route path="/Companies">
+            <Route path="/Connections">
               {" "}
-              <Companies />{" "}
+              <Connections />{" "}
             </Route>
             <Route path="/Admin_settings">
               {" "}

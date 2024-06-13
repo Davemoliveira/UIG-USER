@@ -10,8 +10,7 @@ const HomePage = ({ username }) => {
     <div>
       <header/>
       <Sidebar />
-      <h2>Welcome, {username}!</h2>
-      <p>This is the homepage.</p>
+      <center> <h2>Welcome, {username}!</h2> </center>
       <Footer />
     </div>
   );
