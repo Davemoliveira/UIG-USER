@@ -6,7 +6,7 @@ import FontSizeIncreaser from '../components/FontSizeIncreaser'; // Adjust the p
 import ToggleButton from '../components/ToggleButton';
 import TwoColumnGrid from '../components/TwoColumnGrid';
 import { Card, CardBody } from '@windmill/react-ui'
-import Apps_component from '../components/Apps_component';
+//import Apps_component from '../components/Apps_component';
 
 const Applications = () => {
   const [isExpanded, setIsExpanded] = useState(true); // State to control sidebar visibility
@@ -41,7 +41,6 @@ const Applications = () => {
 
           </div>
 
-        <Apps_component/>
 
 
 

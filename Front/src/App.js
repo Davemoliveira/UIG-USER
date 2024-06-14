@@ -10,6 +10,7 @@ import {
 
 // Components
 import LoginModal from "./LoginModal"
+import PortDisplay from './components/PortDisplay';
 
 // Pages
 import Overview from "./pages/overview"
@@ -24,6 +25,11 @@ import Page2 from "./components/Page2"
 import Signup from "./pages/Signup"
 import CreateUser from "./pages/CreateUser"
 import { useAuthentication } from "./hooks/useAuthentication"
+
+
+// Retrieve the port number from an environment variable or set a default port
+const port = process.env.REACT_APP_PORT || window.location.port;
+
 
 const App = () => {
   const [username, setUsername] = React.useState("")
@@ -44,6 +50,7 @@ const App = () => {
 
   return (
     <div className="app">
+
       <Switch>
         <Route path="/" exact>
           {userLoggedIn ? (
