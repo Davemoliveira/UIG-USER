@@ -5,7 +5,7 @@ import DarkModeToggle from "../components/DarkModeToggle"; // Adjust the path as
 import ToggleButton from "../components/ToggleButton";
 import TwoColumnGrid from "../components/TwoColumnGrid";
 import { Card, CardBody } from "@windmill/react-ui";
-
+import Deployments_Component from "../components/Deployments_Component";
 const Deployments = () => {
   const [isExpanded, setIsExpanded] = useState(true); // State to control sidebar visibility
 
@@ -25,25 +25,19 @@ const Deployments = () => {
 
       <Card>
   <CardBody>
-    <p className="mb-4 font-semibold text-center text-gray-600 dark:text-gray-600">DEPLOYMENTS</p>
+    <p className="mb-4 text-2xl font-semibold text-center text-gray-600 dark:text-gray-600">MANAGE DEPLOYMENTS</p>
     <p className="text-gray-600 dark:text-gray-500">
+        <hr></hr>
+        <br></br>
 
     </p>
+    <Deployments_Component/>
     <hr></hr>
     <br></br>
   </CardBody>
 </Card>
 
           </div>
-
-       
-
-
-
-
-
-
-
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@ import ToggleButton from '../components/ToggleButton';
 import TwoColumnGrid from '../components/TwoColumnGrid';
 import { Card, CardBody } from '@windmill/react-ui'
 //import Apps_component from '../components/Apps_component';
-
+import Applications_component from "../components/Applications_component";
 const Applications = () => {
   const [isExpanded, setIsExpanded] = useState(true); // State to control sidebar visibility
 
@@ -27,20 +27,20 @@ const Applications = () => {
 
       <Card>
   <CardBody>
-  <p className="mb-4 text-2xl font-semibold text-center text-gray-600 dark:text-gray-600">APPLICATIONS</p>
+  <p className="mb-4 text-2xl font-semibold text-center text-gray-600 dark:text-gray-600">MANAGE APPLICATIONS</p>
     <hr></hr>
     <br></br>
   </CardBody>
 </Card>
 
 
+  <Applications_component/>
 
 
 
 
 
           </div>
-
 
 
 
