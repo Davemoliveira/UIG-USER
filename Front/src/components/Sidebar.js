@@ -49,7 +49,7 @@ const Sidebar = ({ location }) => {
         Dashsboard
       </h2>
 
-      <button onClick={toggleSidebar} className="flex flex-col mb-4 items-left">
+      <button onClick={toggleSidebar} className="flex flex-col mb-4 items-left bg-transparent">
         {isExpanded ? (
           <RiExpandLeftLine className="w-10 h-10 mt-2 mb-2 fill-black" />
         ) : (

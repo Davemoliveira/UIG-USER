@@ -63,7 +63,7 @@ function AddEditUser({ data, type, fetchUsers, handleCloseModel }) {
     <div className="flex items-center justify-center p-5">
       <div className="p-8 bg-white rounded-md shadow-md relative">
         <div className="text-center mb-6">
-          <h1 className="mb-6 text-2xl font-semibold text-gray-800">
+          <h1 className="mb-6 text-2xl font-semibold text-gray-800 #007bff">
             {type === "EDIT" ? "Update User Details" : "Create User"}
           </h1>
         </div>
