@@ -14,7 +14,11 @@ import NetworkIP from '../components/NetworkIP';
 import { version } from 'react';
 import ReactVersion from '../components/ReactVersion';
 import ServerPort from '../components/ServerPort';
-import AWSStatusChecker from '../components/AWSStatusChecker';
+import AWS_health from '../components/AWS_health';
+import AZU_health from '../components/AZU_health';
+import GCP_health from '../components/GCP_health';
+
+import JavaVersionFetcher from '../components/JavaVersionFetcher';
 
 // Retrieve the port number from an environment variable or set a default port
 const port = process.env.REACT_APP_PORT || window.location.port;
@@ -71,7 +75,7 @@ const Overview = () => {
     <li
        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
        <span className='text-base font-bold'>JAVA VERSION</span>
-       <span class="mb-1 text-indigo-800 font-display text-5xl">  <NetworkIP/></span>
+       <span class="mb-1 text-indigo-800 font-display text-5xl">  <JavaVersionFetcher/></span>
     </li>
 
     <li
@@ -82,24 +86,24 @@ const Overview = () => {
 
      <li
        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-       <span className='text-base font-bold'>AWS STATUS</span>
-       <span class="mb-1 text-indigo-800 font-display text-5xl">  <AWSStatusChecker/>    </span>
+       <span className='text-base font-bold'>AWS HEALTH STATUS</span>
+       <span class="mb-1 text-indigo-800 font-display text-5xl">  <AWS_health/>   </span>
      </li>
 
      <li
        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-       <span className='text-base font-bold'>AZURE STATUS</span>
-       <span class="mb-1 text-indigo-800 font-display text-5xl">  <AWSStatusChecker/>    </span>
+       <span className='text-base font-bold'>AZURE HEALTH STATUS</span>
+       <span class="mb-1 text-indigo-800 font-display text-5xl">  <AZU_health/>  </span>
      </li>
 
      <li
        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-       <span className='text-base font-bold'>GCP STATUS</span>
-       <span class="mb-1 text-indigo-800 font-display text-5xl">  <AWSStatusChecker/>    </span>
+       <span className='text-base font-bold'>GCP HEALTH STATUS</span>
+       <span class="mb-1 text-indigo-800 font-display text-5xl">  <GCP_health/>   </span>
      </li>
 
 </ul>
-          </div>
+</div>
 <div>
 </div>
       </div>

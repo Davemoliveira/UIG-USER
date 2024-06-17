@@ -21,9 +21,7 @@ const styles = {
     fontSize: '24px',
     marginBottom: '10px',
   },
-  port: {
-    fontSize: '20px',
-  },
+
 };
 
 export default PortDisplay;
