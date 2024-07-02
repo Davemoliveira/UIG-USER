@@ -1,42 +1,42 @@
 // ** React Imports
-import { createContext, useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { createContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 // ** Defaults
-const defaultProvider = {}
+const defaultProvider = {};
 
-const AuthContext = createContext(defaultProvider)
+const AuthContext = createContext(defaultProvider);
 
 const AuthContextProvider = ({ children }) => {
   // ** State
-  const [userLoggedIn, setUserLoggedIn] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(false)
-  const history = useHistory()
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
-    const getRole = localStorage.getItem("roleName")
+    const getRole = localStorage.getItem("roleName");
     if (getRole === "ADMIN") {
-      setIsAdmin(true)
+      setIsAdmin(true);
     } else {
-      setIsAdmin(false)
+      setIsAdmin(false);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    const getToken = localStorage.getItem("token")
+    const getToken = localStorage.getItem("token");
     if (!getToken) {
-      history.push("/")
+      history.push("/");
     }
-  }, [])
+  }, []);
 
   const contextValue = {
     setUserLoggedIn,
     userLoggedIn,
-    isAdmin
-  }
+    isAdmin,
+  };
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-  )
-}
+  );
+};
 
-export { AuthContext, AuthContextProvider }
+export { AuthContext, AuthContextProvider };

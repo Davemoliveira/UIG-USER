@@ -2,155 +2,161 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: 'Montserrat', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
+* {
+	font-family: 'Montserrat', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
 }
 
-body{
-  background: bg-gradient-to-r from-slate-300 to-slate-500;
+body {
+	background: bg-gradient-to-r from-slate-300 to-slate-500;
 }
 
-a{
- color: black;
+a {
+	color: black;
 }
 
-li, ul{
-  color:black;
+li,
+ul {
+	color: black;
 }
 
-span{
-  color:black;
+span {
+	color: black;
 }
 
-footer{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  padding: 1rem;
-  text-align: center;
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	text-align: center;
 }
 
 /* Slide animation for main content */
 .slide-in {
-  animation: slideFromRight 0.5s ease-in-out forwards;
-  opacity: 0;
+	animation: slideFromRight 0.5s ease-in-out forwards;
+	opacity: 0;
 }
 
 @keyframes slideFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 /* Toggle button */
 .toggle-button {
-  padding: 10px 20px;
-  background-color: #ddd;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+	padding: 10px 20px;
+	background-color: #ddd;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
 }
 
 .toggle-button.on {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
 
 .toggle-button.off {
-  background-color: bg-gray-50;
-  color: white;
+	background-color: bg-gray-50;
+	color: white;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 .navbar {
-    background-color: #f8f9fa;
-    padding: 10px;
+	background-color: #f8f9fa;
+	padding: 10px;
 }
 
 .navbar a {
-    text-decoration: none;
-    /* color: #007bff; */
-    margin-right: 15px;
+	text-decoration: none;
+	/* color: #007bff; */
+	margin-right: 15px;
 }
 
 .navbar a.btn {
-    border: 1px solid #dc3545;
-    color: #dc3545;
-    padding: 5px 10px;
+	border: 1px solid #dc3545;
+	color: #dc3545;
+	padding: 5px 10px;
 }
 
 .container {
-    padding: 20px;
+	padding: 20px;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
 
 form {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+	display: block;
+	margin-bottom: 5px;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid grey;
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	border: 1px solid grey;
 }
 
 button {
-    padding: 10px 15px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    cursor: pointer;
+	padding: 10px 15px;
+	color: white;
+	background-color: #007bff;
+	border: none;
+	cursor: pointer;
 }
 
 button.btn-danger {
-    background-color: #dc3545;
+	background-color: #dc3545;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+table,
+th,
+td {
+	border: 1px solid #ddd;
 }
 
-th, td {
-    padding: 8px;
-    text-align: left;
+th,
+td {
+	padding: 8px;
+	text-align: left;
 }
 
-#connectionDetails, #deploymentDetails{
-border: 1px solid grey;
+#connectionDetails,
+#deploymentDetails {
+	border: 1px solid grey;
 }

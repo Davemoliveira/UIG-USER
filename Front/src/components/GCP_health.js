@@ -5,11 +5,11 @@ const GCP_health = () => {
     return (
         <div>
         <br/>
-                <br/>
+        <br/>
             <a href="https://status.cloud.google.com/" target="_blank" rel="noopener noreferrer">
                 <p class="text-indigo-700">Link</p>
             </a>
-                    <br/>
+         <br/>
         </div>
     );
 };

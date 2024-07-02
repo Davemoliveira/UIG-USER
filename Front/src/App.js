@@ -1,56 +1,53 @@
 // src/App.js
-import React, { useEffect } from "react"
-import { useState } from "react"
+import React, { useEffect } from "react";
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
-} from "react-router-dom"
+  Redirect,
+} from "react-router-dom";
 
 // Components
-import LoginModal from "./LoginModal"
-import PortDisplay from './components/PortDisplay';
+import LoginModal from "./LoginModal";
+import PortDisplay from "./components/PortDisplay";
 
 // Pages
-import Overview from "./pages/overview"
-import Applications from "./pages/Applications"
-import Connections from "./pages/Connections"
-import Deployments from "./pages/Deployments"
-import Users from "./pages/users"
-import Admin_settings from "./pages/admin_settings"
+import Overview from "./pages/overview";
+import Applications from "./pages/Applications";
+import Connections from "./pages/Connections";
+import Deployments from "./pages/Deployments";
+import Users from "./pages/users";
+import Admin_settings from "./pages/admin_settings";
 
-import HomePage from "./HomePage"
-import Page2 from "./components/Page2"
-import Signup from "./pages/Signup"
-import CreateUser from "./pages/CreateUser"
-import { useAuthentication } from "./hooks/useAuthentication"
-
+import HomePage from "./HomePage";
+import Page2 from "./components/Page2";
+import Signup from "./pages/Signup";
+import CreateUser from "./pages/CreateUser";
+import { useAuthentication } from "./hooks/useAuthentication";
 
 // Retrieve the port number from an environment variable or set a default port
 const port = process.env.REACT_APP_PORT || window.location.port;
 
-
 const App = () => {
-  const [username, setUsername] = React.useState("")
-  const { setUserLoggedIn, userLoggedIn, isAdmin } = useAuthentication()
+  const [username, setUsername] = React.useState("");
+  const { setUserLoggedIn, userLoggedIn, isAdmin } = useAuthentication();
 
   const handleLogin = (username) => {
-    setUserLoggedIn(true)
-    setUsername(username)
-  }
+    setUserLoggedIn(true);
+    setUsername(username);
+  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      setUserLoggedIn(true)
+      setUserLoggedIn(true);
     } else {
-      setUserLoggedIn(false)
+      setUserLoggedIn(false);
     }
-  }, [])
+  }, []);
 
   return (
     <div className="app">
-
       <Switch>
         <Route path="/" exact>
           {userLoggedIn ? (
@@ -114,7 +111,7 @@ const App = () => {
         </Route>
       </Switch>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

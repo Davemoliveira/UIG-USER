@@ -1,71 +1,71 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
-import Paper from "@mui/material/Paper"
-import Table from "@mui/material/Table"
-import TableBody from "@mui/material/TableBody"
-import TableCell from "@mui/material/TableCell"
-import TableContainer from "@mui/material/TableContainer"
-import TableHead from "@mui/material/TableHead"
-import TablePagination from "@mui/material/TablePagination"
-import TableRow from "@mui/material/TableRow"
-import IconButton from "@mui/material/IconButton"
-import EditIcon from "@mui/icons-material/Edit"
-import DeleteIcon from "@mui/icons-material/Delete"
-import apiService from "../services/ApiService"
-import CommonModal from "./CommonModal"
-import AddEditUser from "./AddEditUser"
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import Paper from "@mui/material/Paper";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import apiService from "../services/ApiService";
+import CommonModal from "./CommonModal";
+import AddEditUser from "./AddEditUser";
 
 const columns = [
   { id: "id", label: "ID", minWidth: 100 },
   { id: "email", label: "Email", minWidth: 170 },
   { id: "phoneNumber", label: "Phone Number", minWidth: 150 },
-  { id: "actions", label: "Actions", minWidth: 100, align: "center" } // New column for actions
-]
+  { id: "actions", label: "Actions", minWidth: 100, align: "center" }, // New column for actions
+];
 
 function Usertable({ userList, fetchUsers }) {
-  const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(10)
-  const [model, setModel] = useState(false)
-  const [modelPayload, setModelPayload] = useState({ data: null, type: null })
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [model, setModel] = useState(false);
+  const [modelPayload, setModelPayload] = useState({ data: null, type: null });
 
   const handleCloseModel = () => {
-    setModel(false)
-    setModelPayload({ data: null, type: null })
-  }
+    setModel(false);
+    setModelPayload({ data: null, type: null });
+  };
 
   const handleChangePage = (event, newPage) => {
-    setPage(newPage)
-  }
+    setPage(newPage);
+  };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value)
-    setPage(0)
-  }
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
 
   const handleEditClick = async (userId) => {
-    const getUserData = userList.find((f) => f.id === userId)
-    console.log(getUserData)
+    const getUserData = userList.find((f) => f.id === userId);
+    console.log(getUserData);
 
-    setModel(true)
-    setModelPayload({ data: getUserData, type: "EDIT" })
-  }
+    setModel(true);
+    setModelPayload({ data: getUserData, type: "EDIT" });
+  };
 
   const handleDeleteClick = async (userId) => {
     // Implement delete functionality here, e.g., show confirmation dialog and delete user
     try {
       // Call the deleteUser method from apiService to delete the user
-      const response = await apiService.deleteUser(userId)
+      const response = await apiService.deleteUser(userId);
 
       if (response && fetchUsers) {
-        fetchUsers()
+        fetchUsers();
       }
       // Optionally, refresh the user list or update state after successful deletion
-      console.log(`User with ID ${userId} deleted successfully`)
+      console.log(`User with ID ${userId} deleted successfully`);
     } catch (error) {
-      console.error("Error deleting user:", error.message)
+      console.error("Error deleting user:", error.message);
       // Handle error gracefully (e.g., display error message to user)
     }
-  }
+  };
 
   const getContentModel = () => {
     if (modelPayload) {
@@ -77,16 +77,16 @@ function Usertable({ userList, fetchUsers }) {
             fetchUsers={fetchUsers}
             handleCloseModel={handleCloseModel}
           />
-        )
+        );
       }
 
       if (modelPayload.type === "DELETE") {
-        return <></>
+        return <></>;
       }
     }
 
-    return <></>
-  }
+    return <></>;
+  };
 
   return (
     <>
@@ -122,7 +122,7 @@ function Usertable({ userList, fetchUsers }) {
                           <div
                             style={{
                               display: "flex",
-                              justifyContent: "center"
+                              justifyContent: "center",
                             }}
                           >
                             <IconButton
@@ -167,7 +167,7 @@ function Usertable({ userList, fetchUsers }) {
         />
       )}
     </>
-  )
+  );
 }
 
-export default Usertable
+export default Usertable;

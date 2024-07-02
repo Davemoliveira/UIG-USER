@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import axios from "axios"
-import { Link } from "react-router-dom"
-import apiService from "../services/ApiService"
+import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import apiService from "../services/ApiService";
 
 function CreateUser() {
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [password, setPassword] = useState("")
-  const [email, setEmail] = useState("")
-  const [role, setRole] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
 
   const handleSignup = async () => {
     try {
@@ -15,28 +15,28 @@ function CreateUser() {
 
       // Check if required fields are not empty
       if (!phoneNumber || !email || !password) {
-        alert("Please enter username, email, and password")
-        return
+        alert("Please enter username, email, and password");
+        return;
       }
       let payload = {
         phoneNumber,
         email,
-        password
+        password,
         // roleName : {role}
-      }
+      };
 
       // Make API request to signup endpoint
-      const response = await apiService.signUp(payload)
+      const response = await apiService.signUp(payload);
 
       // Handle successful signup (e.g., store token, redirect, etc.)
-      console.log("Create user successful:", response.data)
+      console.log("Create user successful:", response.data);
       // Optionally, you can trigger a login after signup
       // onLogin(email);
     } catch (error) {
-      console.error(" error:", error)
-      alert(" failed. Please try again.")
+      console.error(" error:", error);
+      alert(" failed. Please try again.");
     }
-  }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -101,7 +101,7 @@ function CreateUser() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CreateUser
+export default CreateUser;

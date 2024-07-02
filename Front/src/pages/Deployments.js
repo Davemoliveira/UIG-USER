@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import DarkModeToggle from "../components/DarkModeToggle"; // Adjust the path as needed
@@ -16,35 +16,31 @@ const Deployments = () => {
   return (
     <div className="flex">
       <Sidebar isExpanded={isExpanded} />
-      <div className={`flex-1 ${isExpanded ? 'ml-64' : 'ml-16'}`}>
-      <div className='flex justify-center'>
-      <div className='w-full max-w-screen-lg px-4'>
-      <div className='pt-20'>
-      <div className='px-20'>       
-      <div className="slide-in">
-
-      <Card>
-  <CardBody>
-    <p className="mb-4 text-2xl font-semibold text-center text-gray-600 dark:text-gray-600">MANAGE DEPLOYMENTS</p>
-    <p className="text-gray-600 dark:text-gray-500">
-        <hr></hr>
-        <br></br>
-
-    </p>
-    <Deployments_Component/>
-    <hr></hr>
-    <br></br>
-  </CardBody>
-</Card>
-
+      <div className={`flex-1 ${isExpanded ? "ml-64" : "ml-16"}`}>
+        <div className="flex justify-center">
+          <div className="w-full max-w-screen-lg px-4">
+            <div className="pt-20">
+              <div className="px-20">
+                <div className="slide-in">
+                  <Card>
+                    <CardBody>
+                      <p className="mb-4 text-2xl font-semibold text-center text-gray-600 dark:text-gray-600">
+                        MANAGE DEPLOYMENTS
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-500">
+                        <hr></hr>
+                        <br></br>
+                      </p>
+                      <Deployments_Component />
+                      <hr></hr>
+                      <br></br>
+                    </CardBody>
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
+        </div>
       </div>
       <Footer />
     </div>

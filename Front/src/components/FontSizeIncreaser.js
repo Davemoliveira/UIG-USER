@@ -1,4 +1,4 @@
-// IN PROGRESS: Setting > Increase/Decrease font size
+// Not fully developed - Use TBD
 import React, { useState } from 'react';
 
 const FontSizeIncreaser = () => {

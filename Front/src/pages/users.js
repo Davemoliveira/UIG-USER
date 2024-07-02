@@ -1,45 +1,45 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import Sidebar from "../components/Sidebar"
-import Footer from "../components/Footer"
-import DarkModeToggle from "../components/DarkModeToggle" // Adjust the path as needed
-import FontSizeIncreaser from "../components/FontSizeIncreaser" // Adjust the path as needed
-import ToggleButton from "../components/ToggleButton"
-import TwoColumnGrid from "../components/TwoColumnGrid"
-import { Card, CardBody } from "@windmill/react-ui"
-import Usertable from "../components/Usertable"
-import apiService from "../services/ApiService"
-import CommonModal from "../components/CommonModal"
-import AddEditUser from "../components/AddEditUser"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
+import DarkModeToggle from "../components/DarkModeToggle"; // Adjust the path as needed
+import FontSizeIncreaser from "../components/FontSizeIncreaser"; // Adjust the path as needed
+import ToggleButton from "../components/ToggleButton";
+import TwoColumnGrid from "../components/TwoColumnGrid";
+import { Card, CardBody } from "@windmill/react-ui";
+import Usertable from "../components/Usertable";
+import apiService from "../services/ApiService";
+import CommonModal from "../components/CommonModal";
+import AddEditUser from "../components/AddEditUser";
 
 const Users = () => {
-  const [isExpanded, setIsExpanded] = useState(true) // State to control sidebar visibility
-  const [userList, setUserList] = useState([])
-  const [model, setModel] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true); // State to control sidebar visibility
+  const [userList, setUserList] = useState([]);
+  const [model, setModel] = useState(false);
 
   const handleCloseModel = () => {
-    setModel(false)
-  }
+    setModel(false);
+  };
 
   const fetchUsers = async () => {
     try {
       // Call the getAllUsers API with the provided token
-      const usersData = await apiService.getAllUsers()
+      const usersData = await apiService.getAllUsers();
       if (usersData && usersData.length > 0) {
-        setUserList(usersData)
+        setUserList(usersData);
       }
     } catch (error) {
-      console.error("Error fetching users:", error.message)
+      console.error("Error fetching users:", error.message);
       // Handle error, e.g., show an error message to the user
     }
-  }
+  };
 
   useEffect(() => {
-    fetchUsers() // Call the fetchUsers function to fetch user data
-  }, [])
+    fetchUsers(); // Call the fetchUsers function to fetch user data
+  }, []);
   const toggleSidebar = () => {
-    setIsExpanded(!isExpanded)
-  }
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <div className="flex">
@@ -54,7 +54,7 @@ const Users = () => {
               <div className="max-w-2xl mx-auto p-10 relative">
                 <button
                   onClick={() => {
-                    setModel(true)
+                    setModel(true);
                   }}
                   className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded absolute top-0 right-0"
                 >
@@ -115,7 +115,7 @@ const Users = () => {
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Users
+export default Users;

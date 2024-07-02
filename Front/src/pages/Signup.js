@@ -1,39 +1,39 @@
-import React, { useState } from "react"
-import { Link, useHistory } from "react-router-dom"
-import apiService from "../services/ApiService"
-import useToastMessages from "../hooks/useToastMessages"
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import apiService from "../services/ApiService";
+import useToastMessages from "../hooks/useToastMessages";
 
 const Signup = () => {
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [password, setPassword] = useState("")
-  const [email, setEmail] = useState("")
-  const { push } = useHistory()
-  const { showToast } = useToastMessages()
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const { push } = useHistory();
+  const { showToast } = useToastMessages();
 
   const handleSignup = async () => {
     try {
       // debugger
       if (!phoneNumber || !email || !password) {
-        showToast("Please enter username, email, and password", "error")
+        showToast("Please enter username, email, and password", "error");
 
-        return
+        return;
       }
       let payload = {
         phoneNumber,
         email,
-        password
+        password,
         // roleName : {role}
-      }
+      };
       // debugger
 
-      const response = await apiService.signUp(payload)
+      const response = await apiService.signUp(payload);
 
-      showToast("User Created successfully")
-      push("/")
+      showToast("User Created successfully");
+      push("/");
     } catch (error) {
-      showToast(error.message, "error")
+      showToast(error.message, "error");
     }
-  }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -103,7 +103,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
