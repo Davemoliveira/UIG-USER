@@ -59,9 +59,9 @@ const Overview = () => {
                     </li>
 
                     <li class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-                      <span className="text-base font-bold">DATABASE PORT</span>
+                      <span className="text-base font-bold">DATABASE PORT</span><br/><br/>
                       <span class="mb-1 text-indigo-800 font-display text-5xl">
-                        <ServerPort />{" "}
+                        <p>8081</p>
                       </span>
                     </li>
 
@@ -82,10 +82,9 @@ const Overview = () => {
                     </li>
 
                     <li class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-                      <span className="text-base font-bold">JAVA VERSION</span>
+                      <span className="text-base font-bold">JAVA VERSION</span><br/>
+                       <p>21</p>
                       <span class="mb-1 text-indigo-800 font-display text-5xl">
-                        {" "}
-                        <JavaVersionFetcher />
                       </span>
                     </li>
 
